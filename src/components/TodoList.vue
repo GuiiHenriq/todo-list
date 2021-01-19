@@ -37,17 +37,13 @@ export default {
   },
    methods: {
     addItem() {
-      if(!this.item) return;
+      if(!this.item) return alert('Preencha o campo de texto');
 
       this.arrayItems.push(this.item);
       this.item = "";
     },
     removeItem(index) {
       this.arrayItems.splice(index, 1);
-      
-      console.log(index)
-
-      console.log(this.$refs.teste)
 		}
   },
 }
@@ -156,6 +152,8 @@ main {
   padding: 0 16px;
   margin-bottom: 8px;
   box-sizing: border-box;
+
+  transition: all 0.3s;
 }
 
 .items li p {
@@ -190,8 +188,8 @@ main {
 }
 
 
-/* ============ Responsive ============ */
-@media only screen and (max-width: 768px) {
+/* ============ Responsive - Small Device ============ */
+@media only screen and (max-width: 414px) {
   .to-do {
     width: 90%;
     height: 400px;
